@@ -1,7 +1,13 @@
 pipeline {
     agent any
     stages {
-        
+        stage('Build') {
+            steps {
+                script {
+                    docker.build('nginx')
+                }
+            }
+        }        
         stage('Deploy') {
             agent {
                 label 'work'
