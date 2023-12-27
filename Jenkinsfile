@@ -6,7 +6,7 @@ pipeline {
                 script {
                     checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JJsathiskumar/master.git']])
                     
-                    docker.build('nginx')
+                    docker build -t nginx .
                 }
             }
         }        
